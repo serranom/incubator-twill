@@ -140,6 +140,7 @@ public class ApplicationBundlerTest {
       /** {@inheritDoc} */
       @Override
       public synchronized URL getResource(String name) {
+        /* hard coding this because super.getResource prefers parent loader */
         try {
           if (name.contains("Class1")) {
             return new URL("jar", null, urls.get(0).toExternalForm() + "!/" + name);
