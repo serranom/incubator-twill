@@ -222,7 +222,9 @@ public final class ApplicationBundler {
         String[] parts = classPath.split("/");
         for (int i = parts.length - 2; i >= 0; i--) {
           entryName = parts[i] + "-" + entryName;
-          if (!entries.contains(SUBDIR_LIB + entryName)) break;
+          if (!entries.contains(SUBDIR_LIB + entryName)) {
+            break;
+          }
         }
       }
       saveDirEntry(SUBDIR_LIB, entries, jarOut);

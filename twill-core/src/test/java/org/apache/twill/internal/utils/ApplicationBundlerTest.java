@@ -144,10 +144,11 @@ public class ApplicationBundlerTest {
         try {
           if (name.contains("Class1")) {
             return new URL("jar", null, urls.get(0).toExternalForm() + "!/" + name);
-          } else if (name.contains("Class2"))
+          } else if (name.contains("Class2")) {
             return new URL("jar", null, urls.get(1).toExternalForm() + "!/" + name);
-          else
+          } else {
             return super.getResource(name);
+          }
         } catch (MalformedURLException e) {
           return null;
         }
